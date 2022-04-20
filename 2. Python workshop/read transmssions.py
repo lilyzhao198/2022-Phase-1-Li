@@ -1,6 +1,9 @@
 import csv
+from pprint import pprint
 
-with open('transmissions.csv', 'r') as myfile:
-    csvreader = csv.reader(myfile)
-    for row in csvreader:
-        print(row)
+transmissions = [0]
+with open('transmissions.csv') as csvfile:
+    csvreader = csv.reader(csvfile, quotechar='|')
+    for line in csvreader:
+        transmissions.append(line)
+pprint(transmissions)
